@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multimedia Portfolio | Home</title>
+    <style>
+        /* Global Styles & Variables */
+        :root {
+            --bg-color: #0d2e1c;       /* Dark green background */
+            --card-bg: #144229;        /* Slightly lighter green for containers */
+            --accent-color: #d4af37;   /* Gold accent */
+            --text-color: #ffffff;     /* Crisp white text */
+            --text-muted: #dcdcdc;     /* Off-white for secondary text */
+            --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-family);
+            line-height: 1.6;
+            padding-bottom: 40px;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #081f13;
+            border-bottom: 3px solid var(--accent-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--accent-color);
+            background-color: rgba(212, 175, 55, 0.1);
+        }
+
+        /* Slideshow Header Banner */
+        .slideshow-container {
+            max-width: 100%;
+            height: 350px;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 3px solid var(--accent-color);
+        }
+
+        .mySlides {
+            display: none;
+            width: 100%;
+            height: 100%;
+        }
+
+        .mySlides img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .banner-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(13, 46, 28, 0.2), rgba(13, 46, 28, 0.8));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            pointer-events: none;
+        }
+
+        .banner-title {
+            font-size: 3rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+            color: var(--text-color);
+            text-align: center;
+            font-weight: 800;
+        }
+
+        .banner-title span {
+            color: var(--accent-color);
+        }
+
+        /* Main Content Layout */
+        main {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .profile-card {
+            background-color: var(--card-bg);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .profile-left {
+            flex: 0 0 250px;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 220px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid var(--accent-color);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+        }
+
+        .profile-right {
+            flex: 1;
+        }
+
+        .profile-right h2 {
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            font-size: 2rem;
+            border-bottom: 2px solid rgba(212, 175, 55, 0.2);
+            padding-bottom: 10px;
+        }
+
+        .profile-right p {
+            margin-bottom: 20px;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .profile-right p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+
+            .slideshow-container {
+                height: 200px;
+            }
+
+            .banner-title {
+                font-size: 1.8rem;
+            }
+
+            .profile-card {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+
+            .profile-left {
+                flex: none;
+            }
+
+            .profile-right h2 {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Multimedia Portfolio</div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="photoshop.html">Photoshop</a></li>
+                <li><a href="illustrator.html">Illustrator</a></li>
+                <li><a href="premiere.html">Premiere Pro Videos</a></li>
+                <li><a href="animation.html">Animation</a></li>
+                <li><a href="final.html">Final Project</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header Banner Slideshow -->
+    <header class="slideshow-container">
+        <!-- Slide 1 -->
+        <div class="mySlides fade">
+            <img src="final1.jpg" alt="Portfolio Banner Showcase 1">
+        </div>
+        <!-- Slide 2 -->
+        <div class="mySlides fade">
+            <img src="final2.jpg" alt="Portfolio Banner Showcase 2">
+        </div>
+        <!-- Slide 3 -->
+        <div class="mySlides fade">
+            <img src="final3.jpg" alt="Portfolio Banner Showcase 3">
+        </div>
+
+        <!-- Banner Overlay Text -->
+        <div class="banner-overlay">
+            <h1 class="banner-title">Welcome to My <span>Portfolio</span></h1>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main>
+        <section class="profile-card">
+            <!-- Left Side: Profile Image -->
+            <div class="profile-left">
+                <img src="zachcard.jpg" alt="Profile Image" class="profile-img">
+            </div>
+            
+            <!-- Right Side: About Me Paragraphs -->
+            <div class="profile-right">
+                <h2>About My Work</h2>
+                
+                <!-- Paragraph 1: Purpose of the Portfolio -->
+                <p>
+                    <!-- INSERT TEXT HERE: Explain the purpose of this portfolio (to showcase skills learned in Multimedia class). -->
+                    [Replace this text: Enter your custom paragraph here explaining the purpose of this multimedia portfolio and the class projects you will be showcasing.]
+                </p>
+                
+                <!-- Paragraph 2: Current Skills & Goals -->
+                <p>
+                    <!-- INSERT TEXT HERE: Detail current skills and what you plan to learn in this class. -->
+                    [Replace this text: Enter your custom paragraph here detailing your current technical skills, software experience, and what you plan or hope to learn throughout this class.]
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Slideshow JavaScript Script -->
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            slides[slideIndex-1].style.display = "block";  
+            setTimeout(showSlides, 4000); // Changes banner image every 4 seconds
+        }
+    </script>
+
+</body>
+</html>
